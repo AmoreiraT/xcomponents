@@ -1,0 +1,6 @@
+package com.amoreirath.xcomponents
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
