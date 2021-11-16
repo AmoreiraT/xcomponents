@@ -1,16 +1,30 @@
 # xcomponents
 
-A new Flutter project.
+Detecta a plataforma e desenha a UI de acordo com os parametros nativos de Cupertino ou Material
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```
 
-A few resources to get you started if this is your first Flutter project:
+abstract class DetectPlataform<A extends Widget, I extends Widget,
+    W extends Widget> extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return createAndroidWidget(context);
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      return createIosWidget(context);
+    } else {
+      return createWebWidget(context);
+    }
+  }
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  I createIosWidget(BuildContext context);
+  A createAndroidWidget(BuildContext context);
+  W createWebWidget(BuildContext context);
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+```
+
+![' '](./assets/images/screenshot.png)

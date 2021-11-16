@@ -116,10 +116,6 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 20,
             ),
-            Formularios(),
-            SizedBox(
-              height: 20,
-            ),
           ],
         ),
       ),
@@ -157,39 +153,5 @@ class _HomeState extends State<Home> {
         ).build(context),
       ),
     ).build(context);
-  }
-}
-
-class Formularios extends StatelessWidget {
-  Formularios({
-    Key? key,
-  }) : super(key: key);
-
-  final GlobalKey _formkey = GlobalKey();
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formkey,
-      child: ListView(
-        children: [
-          XTextField(
-            label: 'label',
-            validator: 'validator',
-            onChanged: (String) {},
-          ),
-          XTextField(
-            label: 'label',
-            validator: 'validator',
-            onChanged: (String) {},
-          ),
-          XTextField(
-            label: 'label',
-            validator: 'validator',
-            onChanged: (String) {},
-          ),
-        ],
-      ),
-    );
   }
 }
